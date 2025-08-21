@@ -362,7 +362,7 @@ O que o Jackson faz:
 
 ```java
 Pessoa pessoa = new Pessoa("Milena", 19);
-String json = mapper.writeValueAsString(Pessoa);
+String json = mapper.writeValueAsString(pessoa);
 ```
 Esperado:
 ```json
@@ -440,6 +440,11 @@ Saída esperada:
   "idade" : 19
 }
 ```
+Ou ainda, você pode optar por:
+```java
+mapper.writerWithDefaultPrettyPrinter().writeValue(filepath, users);
+```
+
 
 2. Ignorar campos nulos
 
